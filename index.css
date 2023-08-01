@@ -86,6 +86,7 @@ main .dogImg {
     text-shadow: 0px 0px 10px black;
     border-radius: .5em;
     margin: 0 .5em;
+    position: relative;
 }
 
 main .dogImg h1 {
@@ -110,11 +111,46 @@ main .footer button {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
-    transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 500ms, background-color 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 main .footer button:hover {
     transform: scale(1.15);
 }
+main .footer #crossBtn:active {
+    background-color: #FFE7EF;
+}
+
+main .footer #heartBtn:active {
+    background-color: #DBFFF4;
+}
+
+main .footer #crossBtn:disabled,
+main .footer #heartBtn:disabled{
+    background-color: rgba(128, 128, 128, 0.11);
+}
+
 main .footer img {
     width: 30px;
+}
+
+#badgeLike{
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    width: 200px;
+    transform: rotate(-35deg);
+    /* display: none; */
+    opacity: 0;
+    transition: opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#badgeNope{
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    width: 200px;
+    transform: rotate(-35deg);
+    /* display: none; */
+    opacity: 0;
+    transition: opacity 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
