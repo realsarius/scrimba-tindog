@@ -1,4 +1,5 @@
 // Create the Dog class here
+import { disableButtons } from "./utils.js";
 
 class Dog {
   constructor(data) {
@@ -10,6 +11,8 @@ class Dog {
   getDogHtml() {
     return `
       <div class="dogImg" style="background-image:url(${this.avatar});">
+        <img src="./images/badge-nope.png" alt="nope text" id="badgeNope" />
+        <img src="./images/badge-like.png" alt="like text" id="badgeLike" />
         <h1 id="dogName"> ${this.name}, ${this.age}</h1>
         <h2 id="dogName"> ${this.bio}</h1>
       </div>
@@ -24,8 +27,14 @@ class Dog {
     `;
   }
   getCrossed() {
-    console.log("crossed");
+    document.querySelector("#badgeNope").style.opacity = "1";
+    disableButtons();
     this.hasBeenSwiped = true;
+  }
+  getLiked() {
+    document.querySelector("#badgeLike").style.opacity = "1";
+    disableButtons();
+    this.hasBeenLiked = true;
   }
 }
 
